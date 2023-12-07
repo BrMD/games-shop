@@ -1,8 +1,7 @@
 import React from "react";
 import { SemanticProps } from "../../types/semantic-props";
-import { MotionDiv } from "../constants/Motion";
-import { cn } from "../../utils/classes";
-
+import { MotionDiv } from "../constants/semantic-props";
+import { cn } from "../../utils/functions/globals";
 const Div: React.FC<SemanticProps> = (props) => {
   const { framer, children, className, style, framerProps, attributes, key } =
     props;

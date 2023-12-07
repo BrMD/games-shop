@@ -1,7 +1,7 @@
 import React from "react";
 import { SemanticProps } from "../../types/semantic-props";
-import { MotionFooter } from "../constants/Motion";
-import { cn } from "../../utils/classes";
+import { MotionFooter } from "../constants/semantic-props";
+import { cn } from "../../utils/functions/globals";
 
 const Footer: React.FC<SemanticProps> = (props) => {
   const { framer, children, className, style, framerProps, attributes, key } =

@@ -2,9 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 @tailwind variants;
-:root {
-  --Arvo: "Arvo";
-}
 body {
   padding: 0;
   margin: 0;

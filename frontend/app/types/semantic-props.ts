@@ -1,5 +1,6 @@
 import React from "react";
 import { HTMLMotionProps } from "framer-motion";
+import { ChildrenProps } from "./global";
 type Semantics =
   | "article"
   | "aside"

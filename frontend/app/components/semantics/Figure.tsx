@@ -1,7 +1,7 @@
 import React from "react";
 import { SemanticProps } from "../../types/semantic-props";
-import { MotionFigure } from "../constants/Motion";
-import { cn } from "../../utils/classes";
+import { MotionFigure } from "../constants/semantic-props";
+import { cn } from "../../utils/functions/globals";
 
 const Figure: React.FC<SemanticProps> = (props) => {
   const { framer, children, className, style, framerProps, attributes, key } =
