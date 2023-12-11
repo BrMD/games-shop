@@ -12,7 +12,7 @@ const Game_preview = () => {
   }
   return (
     <Div className="game_preview_div">
-      <Link href={"/pages/game_details"}>
+      <Link href={`/pages/game_details/${game.name}`}>
         <Div className=" h-full w-full flex overflow-hidden justify-end ">
           <Figure className="p-0 game_preview_div_img bg-auto">
             <Image

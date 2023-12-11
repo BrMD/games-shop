@@ -1,5 +1,3 @@
-import { Item } from "../utils/classes/classes";
-
 export interface Requirements_pc {
   system_requirements: string;
   processor: string;
