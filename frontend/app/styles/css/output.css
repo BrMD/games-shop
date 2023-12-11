@@ -9,53 +9,55 @@ body {
   color: #fff;
 }
 
-#root::before, ::after {
-  box-sizing: border-box;
-}
-
 .grid_games {
   display: grid;
+  margin-right: 10%;
+  margin-left: 10%;
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1092px) {
   .grid_games {
     grid-template-columns: repeat(5, 1fr);
-    margin-right: 10%;
-    margin-left: 10%;
   }
 }
-@media (max-width: 1024px) and (min-width: 825px) {
+@media (max-width: 1091px) and (min-width: 862px) {
   .grid_games {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-@media (max-width: 824px) and (min-width: 601px) {
+@media (max-width: 861px) and (min-width: 652px) {
   .grid_games {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-@media (max-width: 600px) and (min-width: 420px) {
+@media (max-width: 651px) and (min-width: 440px) {
   .grid_games {
     grid-template-columns: repeat(2, 1fr);
   }
 }
-.game_preview_div_img {
-  position: relative;
-  overflow: hidden;
-  grid-area: img;
+@media (max-width: 439px) {
+  .grid_games {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
-
-.game_preview_div_img img {
-  width: fit-content;
-  height: fit-content;
+.game_preview_img {
+  width: 100%;
+  height: 100%;
   object-fit: fill;
 }
 
 .game_preview_div {
   display: grid;
+  justify-content: center;
+  margin-top: 2em;
   grid-template: "img" "top" "bottom";
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr auto;
+}
+
+.home {
+  display: grid;
+  grid-template-rows: 10vh auto 10vh;
 }
 
 /*# sourceMappingURL=output.css.map */

@@ -4,14 +4,16 @@ import Footer from "./components/landing/Footer";
 import Game_preview from "./components/Game_preview";
 export default function Home() {
   return (
-    <Div className="flex flex-col h-[max-content]">
+    <Div className="home">
       <Header></Header>
-      <Main className="h-[80vh] grid_games">
-        <Game_preview />
-        <Game_preview />
-        <Game_preview />
-        <Game_preview />
-        <Game_preview />
+      <Main className="h-[80vh]">
+        <Div className="grid_games h-[fit-content] gap-2">
+          <Game_preview />
+          <Game_preview />
+          <Game_preview />
+          <Game_preview />
+          <Game_preview />
+        </Div>
       </Main>
       <Footer></Footer>
     </Div>
