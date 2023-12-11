@@ -10,38 +10,41 @@ const Game_preview = () => {
     setPrice(value);
   }
   return (
-    <Div className="h-[35vh] w-[10vw] m-2 border border-solid">
-      <Figure className="border-b-4 border-solid border-blue-900 h-[70%] w-full overflow-hidden bg-center justify-end">
+    <Div className="">
+      <Div className="grid relative">
         <Div className="game_preview_div">
-          <Image
-            src={`/images/covers/${game.cover}`}
-            alt={game.name}
-            width={1920}
-            height={1080}
-            className="game_preview "
-          />
+          <Div className="border-b-4 border-solid border-blue-900 h-[70%] w-full overflow-hidden bg-center justify-end">
+            <Figure className="game_preview_div_img">
+              <Image
+                src={`/images/covers/${game.cover}`}
+                alt={game.name}
+                width={620}
+                height={765}
+                className="game_preview "
+              />
+              <Div className="absolute bg-red-500 m-[7px]">
+                <span className="m-2">{game.type}</span>
+              </Div>
+            </Figure>
+          </Div>
+          <Div>
+            <span>{game.name}</span>
+            <select
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                handlePrice(+e.target.value)
+              }
+            >
+              {game.prices.map((price) => {
+                return (
+                  <option key={price.platform} value={price.price}>
+                    {price.platform}
+                  </option>
+                );
+              })}
+            </select>
+            <span>{price}</span>
+          </Div>
         </Div>
-
-        <Div className="absolute bg-red-500 m-[7px]">
-          <span className="m-2">{game.type}</span>
-        </Div>
-      </Figure>
-      <Div>
-        <span>{game.name}</span>
-        <select
-          onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
-            handlePrice(+e.target.value)
-          }
-        >
-          {game.prices.map((price) => {
-            return (
-              <option key={price.platform} value={price.price}>
-                {price.platform}
-              </option>
-            );
-          })}
-        </select>
-        <span>{price}</span>
       </Div>
     </Div>
   );

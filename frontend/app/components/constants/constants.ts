@@ -12,7 +12,7 @@ export const game: Game = {
     "FirstPerson",
     "ThirdPerson",
   ],
-  cover: "gta-v-cover.jpg",
+  cover: "gta-v-cover-small.jpeg",
   trailers: ["asfijsfj"],
   images: ["aisgjasig"],
   publisher: "Rockstar",

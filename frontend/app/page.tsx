@@ -6,7 +6,10 @@ export default function Home() {
   return (
     <Div className="flex flex-col h-[max-content]">
       <Header></Header>
-      <Main className="h-[80vh] flex flex-row">
+      <Main className="h-[80vh] grid_games">
+        <Game_preview />
+        <Game_preview />
+        <Game_preview />
         <Game_preview />
         <Game_preview />
       </Main>
