@@ -25,7 +25,7 @@ export type Categories =
   | "Adventure"
   | "RPG"
   | "Fighting Game";
-export type ItemTypes = {
+export type GameTypes = {
   id: string;
   name: string;
   categories: Array<Categories>;
