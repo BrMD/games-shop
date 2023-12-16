@@ -3,12 +3,13 @@ import db from "../../connection.mjs";
 import express from "express";
 const router = express.Router();
 
-router.delete("/:id", async (req, res) => {
+router.get("/:id", async (req, res) => {
   let collection = await db.collection("users");
   const id = new mongoose.Types.ObjectId(req.params.id.trim());
+  console.log(id);
   let query = { _id: id };
-  let result = await collection.deleteOne(query);
-  if (!result) res.send("Didn't find the user to be deleted").status(404);
-  else res.send("Deleted successfully").status(204);
+  let result = await collection.findOne(query);
+  if (!result) res.send("nao acho").status(404);
+  else res.send(result).status(200);
 });
 export default router;
