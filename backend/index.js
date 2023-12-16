@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import "./loadEnvironment.mjs";
 import "express-async-errors";
-import users from "./routes/users.mjs";
+import users from "./users/users.mjs";
 
 const PORT = process.env.PORT;
 const app = express();
@@ -20,6 +20,7 @@ app.use((err, _req, res, next) => {
 //   res.send("bateu no /");
 // });
 app.get("/users", users);
+
 // start the Express server
 app.listen(PORT, () => {
   console.log(`Server is running on port: ${PORT}`);
