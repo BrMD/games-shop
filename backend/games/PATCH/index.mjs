@@ -1,18 +1,18 @@
 import mongoose from "mongoose";
 import db from "../../connection.mjs";
 import express from "express";
-import userModel from "../../schemas/user.model.mjs";
+import gameModel from "../../schemas/game.model.mjs";
 const router = express.Router();
 
 router.patch("/:id", async (req, res) => {
   try {
-    let collection = await db.collection("users");
+    let collection = await db.collection("games");
     const id = new mongoose.Types.ObjectId(req.params.id.trim());
     let query = { _id: id };
     let updateDocument = req.body;
-    updateDocument = new userModel(updateDocument);
+    updateDocument = new gameModel(updateDocument);
     let result = await collection.updateOne(query, updateDocument);
-    if (!result.modifiedCount) throw new Error("Cannot find the user to edit");
+    if (!result.modifiedCount) throw new Error("Cannot update the game");
     res.send(result).status(200);
   } catch (e) {
     res.status(404).send(e);

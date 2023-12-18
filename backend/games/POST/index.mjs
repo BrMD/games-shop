@@ -1,16 +1,16 @@
 import db from "../../connection.mjs";
 import express from "express";
-import userModel from "../../schemas/user.model.mjs";
+import gameModel from "../../schemas/game.model.mjs";
 const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
-    let collection = await db.collection("aaa");
+    let collection = await db.collection("games");
     let newDocument = req.body;
-    newDocument = new userModel(newDocument);
+    newDocument = new gameModel(newDocument);
     const result = await collection.insertOne(newDocument);
-    if (!result) throw new Error("Cannot create the user");
-    res.send(result).status(201);
+    if (!result) throw new Error("Cannot create the game");
+    res.send(req.body).status(201);
   } catch (e) {
     res.status(404).send(e);
   }

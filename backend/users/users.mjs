@@ -7,10 +7,14 @@ import UpdateUser from "./PATCH/index.mjs";
 const router = express.Router();
 
 router.get("/", async (req, res) => {
-  let collection = await db.collection("users");
-  let results = await collection.find({}).limit(50).toArray();
-
-  res.send(results).status(200);
+  try {
+    let collection = await db.collection("users");
+    let results = await collection.find({}).limit(50).toArray();
+    if (!results) throw new Error("Cannot find the users");
+    res.send(results).status(200);
+  } catch (e) {
+    res.send(e).status(404);
+  }
 });
 
 router.get("/:id", GetSingleUser);

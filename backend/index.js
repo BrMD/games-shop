@@ -3,6 +3,7 @@ import cors from "cors";
 import "./loadEnvironment.mjs";
 import "express-async-errors";
 import users from "./users/users.mjs";
+import games from "./games/games.mjs";
 import bodyParser from "body-parser";
 
 const PORT = process.env.PORT;
@@ -23,6 +24,7 @@ app.use((err, _req, res, next) => {
 //   res.send("bateu no /");
 // });
 app.use("/users", users);
+app.use("/games", games);
 
 // start the Express server
 app.listen(PORT, () => {
