@@ -10,7 +10,7 @@ router.post("/", async (req, res) => {
     newDocument = new userModel(newDocument);
     const result = await collection.insertOne(newDocument);
     if (!result) throw new Error("Cannot create the user");
-    res.send(result).status(201);
+    res.send("User inserted successfully").status(201);
   } catch (e) {
     res.status(404).send(e);
   }

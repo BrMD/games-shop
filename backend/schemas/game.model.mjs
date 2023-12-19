@@ -34,19 +34,3 @@ const gameSchema = new Schema({
 
 const gameModel = mongoose.model("Game", gameSchema);
 export default gameModel;
-
-// _id: ObjectId;
-//   name: string;
-//   categories: Array<Categories>;
-//   cover: string;
-//   trailers: Array<string>;
-//   images: Array<string>;
-//   publisher: string;
-//   studio: string;
-//   description: string;
-//   minimum_requirements_pc?: Requirements_pc;
-//   recommended_requirements_pc?: Requirements_pc;
-//   languages: Array<string>;
-//   prices: Array<Prices_per_platform>;
-//   //release_data: date;
-//   launcher: string;
