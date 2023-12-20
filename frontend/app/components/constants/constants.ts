@@ -1,6 +1,6 @@
-import { Game } from "../../utils/classes/classes";
+import { Item } from "../../utils/classes/classes";
 
-export const game: Game = {
+export const game: Item = {
   type: "Game",
   id: "1",
   name: "Grand Theft Auto V",
@@ -9,8 +9,8 @@ export const game: Game = {
     "FPS",
     "TPS",
     "Adventure",
-    "FirstPerson",
-    "ThirdPerson",
+    "First-Person",
+    "Third-Person",
   ],
   cover: "gaming-gta5-cover.jpg",
   trailers: ["asfijsfj"],
