@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { Div, Figure } from "./semantics";
 import { game } from "./constants/constants";
+import { Prices_per_platform } from "../interfaces";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -34,7 +35,7 @@ const Game_preview = () => {
               handlePrice(+e.target.value)
             }
           >
-            {game.prices.map((price) => {
+            {game.prices.map((price: Prices_per_platform) => {
               return (
                 <option key={price.platform} value={price.price}>
                   {price.platform}
