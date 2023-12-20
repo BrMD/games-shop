@@ -6,6 +6,8 @@ type StylingProps = {
   className?: string;
 };
 
+type TypeItems = "DLC" | "Game";
+
 type Platforms =
   | "Playstation 4"
   | "Xbox One"
@@ -18,8 +20,8 @@ export type Categories =
   | "Action"
   | "SinglePlayer"
   | "Multiplayer"
-  | "FirstPerson"
-  | "ThirdPerson"
+  | "First-Person"
+  | "Third-Person"
   | "FPS"
   | "TPS"
   | "Adventure"

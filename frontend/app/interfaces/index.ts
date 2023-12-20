@@ -1,3 +1,4 @@
+import { Platforms } from "../types/global";
 export interface Requirements_pc {
   system_requirements: string;
   processor: string;
@@ -7,6 +8,6 @@ export interface Requirements_pc {
 }
 
 export interface Prices_per_platform {
-  platform: string;
+  platform: Platforms;
   price: number;
 }

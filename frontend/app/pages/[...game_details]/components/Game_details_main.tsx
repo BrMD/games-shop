@@ -5,13 +5,7 @@ import { usePathname } from "next/navigation";
 
 const Game_details_main = ({ children }: PropsWithChildren) => {
   const pathname = usePathname();
-  console.log(pathname);
-  return (
-    <Main>
-      {children}
-      {pathname}
-    </Main>
-  );
+  return <Main>{children}</Main>;
 };
 
 export default Game_details_main;
