@@ -1,4 +1,4 @@
-import SSM from "aws-sdk/clients/ssm";
+import SSM from "@aws-sdk/clients/ssm";
 
 const ssm = new SSM();
 
