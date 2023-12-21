@@ -1,12 +1,20 @@
-import AWS from "aws-sdk";
-(async () => {
-  const ssm = new AWS.SSM();
-  const parameter = await ssm
-    .getParameter({
-      Name: "PORT",
-      WithDecryption: true,
-    })
-    .promise();
-  const data = JSON.parse(parameter.Parameter.Value);
-  console.log(data); // prints the json from above
-})();
+import SSM from "aws-sdk/clients/ssm";
+
+const ssm = new SSM();
+
+export async function loadParameter(parameterName) {
+  try {
+    const { Parameter } = await ssm
+      .getParameter({
+        Name: parameterName,
+        WithDecryption: true,
+      })
+      .promise();
+
+    return Parameter?.Value ?? null;
+  } catch (e) {
+    console.error(e);
+    return null;
+  }
+}
+console.log(loadParameter("PORT"));
