@@ -12,7 +12,7 @@ export const game: Item = {
     "First-Person",
     "Third-Person",
   ],
-  cover: "gaming-gta5-cover.jpg",
+  cover: "https://games-shop.s3.sa-east-1.amazonaws.com/gaming-gta5-cover.jpg",
   trailers: ["asfijsfj"],
   images: ["aisgjasig"],
   publisher: "Rockstar",

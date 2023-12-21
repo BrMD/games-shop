@@ -17,7 +17,7 @@ const Game_preview = () => {
         <Div className=" h-full w-full flex overflow-hidden justify-end ">
           <Figure className="p-0 game_preview_div_img bg-auto">
             <Image
-              src={`/images/covers/${game.cover}`}
+              src={game.cover}
               alt={game.name}
               width={195}
               height={241}

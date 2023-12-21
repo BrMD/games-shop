@@ -11,12 +11,6 @@ const upload = multer();
 
 router.post("/", upload.single("file"), async (req, res) => {
   const fileStream = Readable.from(req.file.buffer);
-  const params = {
-    Bucket: process.env.BUCKET_NAME,
-
-    Key: req.file.originalname,
-    Body: fileStream,
-  };
 
   try {
     const upload = new Upload({
@@ -27,13 +21,15 @@ router.post("/", upload.single("file"), async (req, res) => {
           secretAccessKey: process.env.ACCESS_KEY_SECRET,
         },
       }),
-      params: params,
+      params: {
+        Bucket: process.env.BUCKET_NAME,
+        Key: req.file.originalname,
+        Body: fileStream,
+      },
     });
-    upload.on("httpUploadProgress", (progress) => {
-      console.log(progress);
-    });
+    upload.on("httpUploadProgress", (progress) => {});
     await upload.done();
-    res.status(200).send("File uploaded");
+    res.status(200).send(upload.singleUploadResult.Location);
   } catch (err) {
     console.error(err);
     res.status(500).send("Failed to upload file");
