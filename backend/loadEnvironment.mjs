@@ -1,4 +1,4 @@
-import AWS from "@aws-sdk";
+import AWS from "aws-sdk";
 (async () => {
   const ssm = new AWS.SSM();
   const parameter = await ssm
