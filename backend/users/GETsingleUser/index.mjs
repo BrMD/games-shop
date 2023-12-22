@@ -7,7 +7,6 @@ router.get("/:id", async (req, res) => {
   try {
     let collection = await db.collection("users");
     const id = new mongoose.Types.ObjectId(req.params.id.trim());
-    console.log(id);
     let query = { _id: id };
     let result = await collection.findOne(query);
     if (!result) throw new Error("user not found");
