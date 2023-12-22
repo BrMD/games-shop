@@ -10,7 +10,7 @@ router.get("/", async (req, res) => {
   try {
     let collection = await db.collection("games");
     let results = await collection.find({}).limit(50).toArray();
-    if (results) throw new Error("Cannot find games");
+    if (!results) throw new Error("Cannot find games");
     res.send(results).status(200);
   } catch (e) {
     res.send(e).status(404);
