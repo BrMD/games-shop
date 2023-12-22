@@ -43,3 +43,10 @@ export type GameTypes = {
   minimum_requirements_pc?: Requirements_pc;
   recommended_requirements_pc?: Requirements_pc;
 };
+
+export type userForm = {
+  name: string;
+  email: string;
+  password: string;
+  permissionLevel: number;
+};

@@ -4,8 +4,16 @@ import { MotionForm } from "../constants/semantic-props";
 import { cn } from "../../utils/functions/globals";
 
 const Form: React.FC<SemanticProps> = (props) => {
-  const { framer, children, className, style, framerProps, attributes, key } =
-    props;
+  const {
+    framer,
+    onSubmit,
+    children,
+    className,
+    style,
+    framerProps,
+    attributes,
+    key,
+  } = props;
   type SectionMotionProps = typeof MotionForm extends React.FC<infer P>
     ? P
     : never;
@@ -21,7 +29,12 @@ const Form: React.FC<SemanticProps> = (props) => {
           {children}
         </MotionForm>
       ) : (
-        <form {...attributes} className={cn("", className)} style={style}>
+        <form
+          {...attributes}
+          onSubmit={onSubmit}
+          className={cn("", className)}
+          style={style}
+        >
           {children}
         </form>
       )}

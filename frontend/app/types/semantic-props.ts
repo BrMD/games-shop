@@ -1,6 +1,8 @@
 import React from "react";
 import { HTMLMotionProps } from "framer-motion";
 import { ChildrenProps } from "./global";
+import { FormEventHandler } from "react";
+
 type Semantics =
   | "article"
   | "aside"
@@ -13,9 +15,11 @@ type Semantics =
   | "dialog"
   | "form"
   | "figure";
+
 export interface SemanticProps extends ChildrenProps {
   framer?: boolean;
   framerProps?: HTMLMotionProps<Semantics>;
   attributes?: React.HTMLAttributes<HTMLElement>;
   key?: string | number;
+  onSubmit?: FormEventHandler<HTMLFormElement>;
 }
