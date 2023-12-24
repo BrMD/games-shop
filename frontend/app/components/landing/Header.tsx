@@ -13,7 +13,7 @@ const Header = () => {
           </a>
         </Div>
         <Div>
-          <a href="#">Perfil/Money</a>
+          <a href="../../pages/perfil_details">Perfil/Money</a>
         </Div>
       </Nav>
     </Head>

@@ -44,7 +44,7 @@ export type GameTypes = {
   recommended_requirements_pc?: Requirements_pc;
 };
 
-export type userForm = {
+export type userStructure = {
   name: string;
   email: string;
   password: string;
