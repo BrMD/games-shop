@@ -10,6 +10,7 @@ const nextConfig = {
       },
     ],
   },
+  env: { IP_EC2_INSTANCE: process.env.IP_EC2_INSTANCE },
 };
 
 module.exports = nextConfig;

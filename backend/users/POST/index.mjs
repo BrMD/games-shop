@@ -5,7 +5,7 @@ const router = express.Router();
 
 router.post("/", async (req, res) => {
   try {
-    let collection = await db.collection("aaa");
+    let collection = await db.collection("users");
     let newDocument = req.body;
     newDocument = new userModel(newDocument);
     const result = await collection.insertOne(newDocument);

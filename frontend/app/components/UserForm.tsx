@@ -12,21 +12,22 @@ const UserForm = () => {
     watch,
     formState: { errors },
   } = useForm<userStructure>();
-  const onSubmit: SubmitHandler<userStructure> = (formData) => {
-    async function postUser(formData: userStructure) {
-      console.log(process.env.IP_EC2_INSTANCE);
-      const { data } = await axios.post(
-        `${process.env.IP_EC2_INSTANCE}/users`,
-        formData
-      );
-      console.log(data);
-    }
-    postUser(formData);
+  const onSubmit = (data: any) => {
+    axios
+      .post(`${process.env.IP_EC2_INSTANCE}/users`, data, {
+        headers: { "Content-Type": "application/json" },
+      })
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error.data);
+      });
   };
   return (
     <Form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col w-[20vw] m-2 p-4 items-center "
+      className="flex flex-col w-[20vw] m-2 p-4 items-center"
     >
       <Div className="flex items-center">
         <label>Name:</label>
