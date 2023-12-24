@@ -13,8 +13,9 @@ const UserForm = () => {
     formState: { errors },
   } = useForm<userStructure>();
   const onSubmit = (data: any) => {
+    console.log(process.env.IP_EC2_INSTANCE);
     axios
-      .post(`${process.env.IP_EC2_INSTANCE}/users`, data, {
+      .post(`http://${process.env.IP_EC2_INSTANCE}/users`, data, {
         headers: { "Content-Type": "application/json" },
       })
       .then((response) => {
